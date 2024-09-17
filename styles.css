@@ -1,0 +1,644 @@
+@import url("https://fonts.cdnfonts.com/css/pokemon-solid");
+
+* {
+  margin: 0;
+  padding: 0;
+  font-size: 62.5%;
+}
+
+:root {
+  --nintendoBtns-color: #2f3235;
+  --insidebtns-color: #202020;
+  --pokemon-text: "Press Start 2P", system-ui;
+  --outlinegray: #656565;
+  --yellowborder: #e3c662;
+  --red: #ff5e52;
+}
+
+body {
+  /* background-color: #1d2c5e; */
+  background-color: #0e1633;
+  font-family: "Poppins", sans-serif;
+  padding: 0 10px 20px;
+}
+
+label,
+input,
+button,
+span,
+p {
+  font-size: 1.5rem;
+}
+
+label {
+  color: white;
+}
+
+/* pokemon search app title */
+h1 {
+  font-size: 4rem;
+  font-family: "Pokemon Solid", sans-serif;
+  text-align: center;
+  letter-spacing: 4px;
+  color: #ffcb05;
+  -webkit-text-fill-color: #ffcb05;
+  -webkit-text-stroke: 2px #3a5da7;
+}
+
+input {
+  margin-top: 5px;
+}
+
+input,
+button {
+  font-family: "Poppins", sans-serif;
+  padding: 5px 15px;
+  border-radius: 5px;
+  border: none;
+}
+
+button {
+  border-radius: 25px;
+  margin-left: 10px;
+  cursor: pointer;
+  display: inline-block;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.searchbar {
+  text-align: center;
+}
+
+#search-button {
+  background-color: var(--yellowborder);
+}
+
+#clear-button {
+  background-color: var(--red);
+}
+
+/* outer border screen */
+.nintendo-switch-border {
+  width: 650px;
+  height: 530px;
+  box-sizing: border-box;
+  background-color: var(--nintendoBtns-color);
+  padding: 13px;
+}
+
+/* inner border */
+.nintendo-switch-screen {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  background-color: black;
+  padding: 30px;
+  border-radius: 10px;
+}
+
+/* whole screen of the nintendo where pokemon info will be shown */
+.pokemon-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  padding: 10px 0 0;
+  border-radius: 5px;
+  background-color: var(--nintendoBtns-color);
+}
+
+.pokemon-font {
+  font-family: var(--pokemon-text);
+}
+
+/* so image and pokemon info are beside each other */
+.pokemon-info-img {
+  display: flex;
+}
+
+/* font size for pokemon name, id */
+.name-id-span {
+  font-size: 1.5rem;
+}
+
+#pokemon-id {
+  margin-left: 10px;
+}
+
+/* for pokemon weight and height */
+.width-height-span {
+  font-size: 1.1rem;
+}
+
+#height {
+  margin-left: 20px;
+}
+
+#pokemon-info {
+  width: 100%;
+  height: 100%;
+  background-color: #8eefad;
+  box-sizing: border-box;
+  margin-top: 15px;
+  border-radius: 5px;
+}
+
+/* pokemon name, hp container */
+.pokemon-info-border {
+  width: 70%;
+  height: fit-content;
+  padding: 5px;
+  background-color: var(--yellowborder);
+}
+
+.pokemon-info-container {
+  background-color: white;
+  box-sizing: border-box;
+  padding: 10px 15px;
+}
+
+.pokemon-info-border,
+.pokemon-info-container {
+  border-radius: 5px;
+}
+
+/* hp bar */
+.pokemon-hp {
+  width: 100%;
+  height: 20px;
+  box-sizing: border-box;
+  background-color: var(--outlinegray);
+  padding: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  margin-top: 5px;
+}
+
+.hptext {
+  color: #ffcb05;
+  font-weight: 700;
+  font-size: 1.3rem;
+  margin-right: 2px;
+}
+
+.hp-bar {
+  width: 95%;
+  height: 100%;
+  background-color: #17b51e;
+  text-align: center;
+  border-radius: 4px;
+}
+
+#hp {
+  font-size: 1.4rem;
+}
+
+/* make image and types beside each other */
+.image-types {
+  display: flex;
+  margin-top: -80px;
+  /* background-color: red; */
+  gap: 10px;
+  position: relative;
+}
+
+/* pokemon image */
+.pokemonimg {
+  width: 210px;
+  /* background-color: red; */
+  margin-top: -30px;
+  z-index: 1;
+}
+
+/* ash image */
+.ash {
+  height: 120px;
+  float: left;
+  /* background-color: red; */
+}
+
+.pokeballs {
+  width: 120px;
+  margin-top: 70px;
+}
+
+/* pokemon types */
+#types {
+  display: flex;
+  column-gap: 5px;
+  margin: 0 5px 5px 0;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+#types span {
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.types-box {
+  width: fit-content;
+  height: fit-content;
+  background-color: black;
+  font-size: 1.3rem;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-weight: 600;
+}
+
+/* nintendo switch body */
+.nintendo-switch {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+/* left / right joycon */
+.nintendo-left,
+.nintendo-right {
+  width: 160px;
+  height: 530px;
+}
+
+/* left joycon content */
+.nintendo-left {
+  background-color: #00bae0;
+  border-radius: 100px 0 0 100px;
+}
+
+.button-minus,
+.button-minuss,
+.joystick,
+.arrows-btn,
+.circle-box,
+.button-plus {
+  background-color: var(--nintendoBtns-color);
+}
+
+.button-minus,
+.button-minuss {
+  box-sizing: border-box;
+  width: 35px;
+  height: 10px;
+  border-radius: 2px;
+  border: 3px solid var(--insidebtns-color);
+}
+
+.button-minus {
+  margin: 30px 0 0 100px;
+}
+
+.joystick {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  /* place in middle */
+  display: block;
+  margin: 0 auto;
+  border: 8px solid var(--insidebtns-color);
+}
+
+.leftjoy {
+  margin-top: 50px;
+}
+
+.arrow-btns {
+  margin-top: 45px;
+}
+
+/* top-down buttons */
+.arrow-row {
+  display: flex;
+  flex-direction: column;
+  row-gap: 45px;
+  align-items: center;
+}
+
+/* left-right buttons */
+.arrow-column {
+  display: flex;
+  column-gap: 40px;
+  justify-content: center;
+  margin-top: -75px;
+}
+
+/* button itself */
+.arrows-btn {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  box-sizing: border-box;
+  padding: 8px;
+  border: 2px solid var(--insidebtns-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.arrows-triangle {
+  width: 0;
+  height: 0;
+  border-radius: 3px;
+}
+
+/* up btn */
+.arrows-triangle.up {
+  border-left: 7.5px solid transparent;
+  border-right: 7.5px solid transparent;
+  border-bottom: 15px solid var(--insidebtns-color);
+}
+
+/* down btn */
+.arrows-triangle.down {
+  border-left: 7.5px solid transparent;
+  border-right: 7.5px solid transparent;
+  border-top: 15px solid var(--insidebtns-color);
+}
+
+/* left btn*/
+.arrows-triangle.left {
+  border-top: 7.5px solid transparent;
+  border-bottom: 7.5px solid transparent;
+  border-right: 15px solid var(--insidebtns-color);
+}
+
+/* right btn */
+.arrows-triangle.right {
+  border-top: 7.5px solid transparent;
+  border-bottom: 7.5px solid transparent;
+  border-left: 15px solid var(--insidebtns-color);
+}
+
+.circle-box {
+  width: 35px;
+  height: 35px;
+  box-sizing: border-box;
+  padding: 7px;
+  border-radius: 3px;
+  margin: 65px 0 0 80px;
+  border: 2px solid var(--insidebtns-color);
+}
+
+.circle {
+  width: 100%;
+  height: 100%;
+  background-color: var(--insidebtns-color);
+  border-radius: 50%;
+}
+
+/* nintendo right joycon content */
+.nintendo-right {
+  background-color: var(--red);
+  border-radius: 0 100px 100px 0;
+}
+
+.button-minuss {
+  margin: 30px 0 0 20px;
+}
+
+.button-plus {
+  box-sizing: border-box;
+  width: 35px;
+  height: 10px;
+  border-radius: 2px;
+  margin: -10px 0 0 20px;
+  border: 3px solid var(--insidebtns-color);
+  rotate: 90deg;
+}
+
+.arrow-letters {
+  font-size: 1.6rem;
+  color: white;
+  font-weight: 500;
+}
+
+/* for right joystick */
+.rightjoy {
+  margin-top: 80px;
+}
+
+/* home button */
+.homebtn-border {
+  width: 40px;
+  height: 40px;
+  box-sizing: border-box;
+  border-radius: 50%;
+  background-color: #3b3b3b;
+  border: 4px solid #828282;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 30px 0 0 25px;
+}
+
+.homebtn-border svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* pokemon stats container */
+
+.pokemon-stats-border,
+.pokemon-stats-container {
+  border-radius: 5px;
+}
+
+.pokemon-stats-border {
+  padding: 5px;
+  background-color: var(--yellowborder);
+}
+
+.pokemon-stats-container {
+  background-color: white;
+  color: black;
+  padding: 10px 15px;
+}
+
+#wildpokemon {
+  font-size: 1.5rem;
+}
+
+.stats {
+  font-size: 1.3rem;
+  line-height: 1.7rem;
+}
+
+.credits {
+  box-sizing: border-box;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  padding: 30px 50px 0;
+  color: white;
+}
+
+.credits p {
+  font-size: 1.2rem;
+  flex-basis: 700px;
+}
+
+@media (max-width: 1000px) {
+  /* font size for pokemon name, id */
+  .name-id-span {
+    font-size: 1.4rem;
+  }
+
+  .width-height-span {
+    font-size: 1rem;
+  }
+
+  #height {
+    margin-left: 5px;
+  }
+
+  .pokemon-info-border {
+    width: 75%;
+  }
+
+  .hptext {
+    font-size: 1.2rem;
+  }
+
+  #hp {
+    font-size: 1.3rem;
+  }
+
+  .image-types {
+    margin-top: -50px;
+    /* background-color: red; */
+  }
+
+  /* pokemon image */
+  .pokemonimg {
+    width: 170px;
+  }
+
+  .pokeballs {
+    width: 110px;
+  }
+
+  /* left / right joycon */
+  .nintendo-left,
+  .nintendo-right {
+    width: 140px;
+    height: 520px;
+  }
+
+  /* outer border screen */
+  .nintendo-switch-border {
+    width: 630px;
+    height: 520px;
+    padding: 15px;
+  }
+
+  /* stats */
+  #wildpokemon {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 800px) {
+  /* nintendo switch body */
+  .nintendo-switch {
+    margin-top: 80px;
+    rotate: 90deg;
+  }
+
+  .pokemon-container {
+    margin: 0;
+    rotate: -90deg;
+    height: 395px;
+    width: 530px;
+    /* position: absolute;
+    left: 10%;
+    bottom: 20%; */
+    margin: 60px 0 0 -75px;
+  }
+
+  .image-types {
+    margin-top: -70px;
+    /* background-color: red; */
+  }
+
+  .nintendo-left,
+  .nintendo-right {
+    width: 135px;
+    height: 600px;
+  }
+
+  .nintendo-switch-border {
+    /* background-color: red; */
+    width: 470px;
+    height: 600px;
+    padding: 13px;
+  }
+
+  #wildpokemon {
+    font-size: 1.3rem;
+  }
+
+  .stats {
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+  }
+
+  /* left/right joycon content */
+
+  .button-minus {
+    margin: 30px 0 0 60px;
+  }
+
+  /* top-down buttons */
+  .arrow-row {
+    row-gap: 40px;
+  }
+
+  /* left-right buttons */
+  .arrow-column {
+    column-gap: 35px;
+  }
+
+  /* button itself */
+  .arrows-btn {
+    width: 35px;
+    height: 35px;
+  }
+
+  .credits {
+    padding: 100px 50px 0;
+  }
+}
+
+@media (max-width: 700px) {
+  /* left / right joycon */
+  .nintendo-left,
+  .nintendo-right {
+    display: none;
+  }
+
+  .nintendo-switch-border {
+    margin: 0 0 0 -250px;
+    height: 97vw;
+  }
+
+  .pokemon-container {
+    height: 380px;
+    width: 550px;
+    margin: 85px 0 0 -90px;
+  }
+
+  .credits {
+    margin-top: -200px;
+  }
+}
